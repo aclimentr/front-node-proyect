@@ -18,6 +18,11 @@ h1{
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: rgb(0, 1, 1);
 }
+h2{
+    text-shadow: 5px 5px 5px rgb(50, 184, 184);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: rgb(0, 1, 1);
+}
 nav{
     width: 100vw;
     height: 100%;
@@ -41,14 +46,31 @@ nav{
     width: 8%;
     height: 100%;
 }
-main{
-    width: 100vw;
-    min-height: 400vh;
-    background-color: #644f9f;
+img{
+    width: 100%;
+}
+div{
     display: flex;
     flex-direction: column;
+    width: 300px;
+    margin-bottom: 50px;
+    margin: 50px;
 }
-
+main{
+    width: 100vw;
+    /* min-height: 400vh; */
+    background-color: #644f9f;
+    display: flex;
+    flex-direction: row;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: baseline;
+}
 aside{
     display: flex;
     flex-direction: column;
@@ -144,7 +166,7 @@ aside{
 }
 footer{
     width: 100vw;
-    height: 20vh;
+    height: 100%;
     display: flex;
     background-color: #443471;
 }

@@ -1,7 +1,8 @@
-
+const arraybook = [];
 let main$$ = document.querySelector("main")
 let section$$ = document.createElement("section")
 const input$$ = document.getElementsByClassName("searchingbar")
+main$$.appendChild(section$$)
 const getAllBooks = async () =>{
         const arraybook = []
         const response = await fetch(`http://localhost:5051/book`,{method:"GET"});
@@ -30,16 +31,15 @@ const getAllBooks = async () =>{
                 console.log(drawingbooks)
                 const booksDiv$$ = document.createElement("div")
                 booksDiv$$.innerHTML=`
-                <h2>${drawingbooks.title}</h2>
                 <img src="${drawingbooks.image}" alt="${drawingbooks.title}">
+                <h2>${drawingbooks.title}</h2>
                 `;
-                section$$.appendChild(main$$)
-                booksDiv$$.appendChild(section$$);
+                section$$.appendChild(booksDiv$$);
             }
         }
     }
-const useInput = (mapingBooks) => {
-    input$$.addEventListener("input", () =>searchBooks(input$$.value, mapingBooks))
+const useInput = (books) => {
+    input$$.addEventListener("input", () =>searchBooks(input$$.value, filteredBooks))
 }
 const searchBooks = (filtro, books) =>{
     let filteredBooks = books.filter((books)=>books.name.toLowercase().includes(filtro.toLowercase()))
